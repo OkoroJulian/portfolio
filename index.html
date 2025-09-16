@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Julian Okoro | Portfolio</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background-color: #fdfdfd;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background: linear-gradient(135deg, #3498db, #2ecc71);
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.8em;
+    }
+
+    header p {
+      margin: 10px 0 0;
+      font-size: 1.2em;
+      font-weight: 500;
+    }
+
+    nav {
+      background: #2c3e50;
+      display: flex;
+      justify-content: center;
+      padding: 12px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 18px;
+      font-weight: bold;
+      font-size: 1.05em;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    nav a:hover {
+      color: #f1c40f;
+      transform: scale(1.1);
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #2c3e50;
+      font-size: 2em;
+    }
+
+    #about p {
+      font-size: 1.1em;
+      text-align: center;
+      line-height: 1.8;
+    }
+
+    #about strong {
+      color: #3498db;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .skill {
+      background: #3498db;
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 25px;
+      font-size: 0.95em;
+      font-weight: bold;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .skill:nth-child(odd) {
+      background: #2ecc71;
+    }
+
+    .skill:hover {
+      transform: translateY(-5px);
+      background: #34495e;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .projects a {
+      display: block;
+      background: #ecf0f1;
+      padding: 20px;
+      border-radius: 12px;
+      text-decoration: none;
+      color: #2c3e50;
+      font-weight: bold;
+      text-align: center;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .projects a:hover {
+      background: #dfe6e9;
+      transform: translateY(-8px);
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact a {
+      display: inline-block;
+      margin: 12px;
+      padding: 14px 28px;
+      background: #3498db;
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .contact a:hover {
+      background: #2ecc71;
+      transform: scale(1.05);
+    }
+
+    #backToTop {
+      display: none;
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #e74c3c;
+      color: white;
+      border: none;
+      padding: 14px 20px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 18px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    #backToTop:hover {
+      background: #c0392b;
+      transform: rotate(360deg);
+    }
+
+    footer {
+      background: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 18px 0;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 20px; text-align: left;">
+      <!-- Profile Photo -->
+      <img src="profile.jpg" alt="Julian Okoro" style="width: 160px; height: 160px; border-radius: 50%; border: 4px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+      <!-- Intro Text -->
+      <div>
+        <h1>Julian Okoro</h1>
+        <p>🧑‍💻 DevOps & Cloud Security Engineer | IAM Specialist | Linux SysAdmin | Python Enthusiast</p>
+        <p style="max-width: 800px; font-size: 1.1rem; margin-top: 10px;">
+          I’m a <strong>DevOps & Cloud Engineer</strong> with hands-on experience designing, securing, and automating cloud infrastructure.  
+          Skilled in <strong>AWS, Azure, Docker, Kubernetes, Terraform, and CI/CD pipelines</strong>, I help organizations build scalable and secure systems.  
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      Hi, I'm <strong>Julian Okoro</strong>, a results-driven <strong>DevOps & Cloud Security Engineer</strong> 
+      with expertise in <strong>AWS and Azure</strong>. I specialize in designing secure cloud systems, 
+      automating workflows with <strong>CI/CD pipelines</strong>, and deploying resilient apps using 
+      <strong>Docker & Kubernetes</strong>.  
+      <br><br>
+      I'm also an <strong>IAM Specialist</strong>, <strong>Linux SysAdmin</strong>, and an enthusiastic learner 
+      exploring <strong>Python</strong> for automation and product testing. Beyond tech, I have strong experience 
+      in <strong>Customer Support</strong> (Nigeria & UK e-commerce) and as a <strong>Hospital Admin Assistant</strong>.
+    </p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="skill">AWS & Azure</div>
+      <div class="skill">IAM & Security</div>
+      <div class="skill">Linux System Administration</div>
+      <div class="skill">Docker & Containerization</div>
+      <div class="skill">CI/CD Pipeline Development</div>
+      <div class="skill">Terraform (IaC)</div>
+      <div class="skill">Monitoring & Incident Management</div>
+      <div class="skill">Customer Support & Communication</div>
+      <div class="skill">Python (Beginner)</div>
+      <div class="skill">Product Testing</div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <a href="https://damilola-davids.notion.site/Capstone-Project-Documentation-Deploying-a-Bank-Application-223f8d103fbc8078be5ac64eedd1954a?pvs=74" target="_blank">Capstone Project: Bank Application Deployment</a>
+      <a href="https://github.com/OkoroJulian/localstack-ci-cd-project" target="_blank">CI/CD Pipeline with LocalStack</a>
+      <a href="https://github.com/The-Cloud-Squad/main_bank_app_backend" target="_blank">Bank App Backend</a>
+      <a href="https://github.com/The-Cloud-Squad/main_bank_app_frontend" target="_blank">Bank App Frontend</a>
+      <a href="https://github.com/The-Cloud-Squad/kubernetes-manifest" target="_blank">Kubernetes Manifests</a>
+      <a href="https://github.com/The-Cloud-Squad/tcs_infra" target="_blank">Infrastructure as Code (Terraform)</a>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <div class="contact">
+      <a href="mailto:julianonyinye2025@gmail.com">📧 Email Me</a>
+      <a href="https://github.com/OkoroJulian" target="_blank">💻 GitHub</a>
+      <a href="https://www.linkedin.com/in/julianokoro-itcloudengineer" target="_blank">🔗 LinkedIn</a>
+      <a href="https://x.com/TechieJulian?t=DWTYupb32nBY9vXiN-EWBA&s=09" target="_blank">🐦 X (Twitter)</a>
+      <a href="https://www.instagram.com/onyinye_j_?igsh=MXRzZXVrZGE5aTUxMQ==" target="_blank">📸 Instagram</a>
+    </div>
+  </section>
+
+  <button onclick="topFunction()" id="backToTop" title="Go to top">↑</button>
+
+  <footer>
+    <p>© 2025 Julian Okoro | Built with ❤️ and Cloud</p>
+  </footer>
+
+  <script>
+    let backToTop = document.getElementById("backToTop");
+    window.onscroll = function() {
+      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        backToTop.style.display = "block";
+      } else {
+        backToTop.style.display = "none";
+      }
+    };
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
+</body>
+</html>
