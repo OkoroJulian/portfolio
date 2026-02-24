@@ -1,281 +1,881 @@
+Julex mama 🐾, [2/24/2026 3:54 PM]
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Julian Okoro | Portfolio</title>
+  <title>Julian Okoro | AWS Cloud & Technical Support Engineer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg: #0a0e1a;
+      --surface: #111827;
+      --surface2: #1a2235;
+      --accent: #00d4ff;
+      --accent2: #00ff9d;
+      --accent3: #7b61ff;
+      --text: #e8eaf0;
+      --muted: #8892a4;
+      --border: rgba(255,255,255,0.07);
+      --glow: rgba(0,212,255,0.15);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      background-color: #fdfdfd;
-      color: #333;
-      scroll-behavior: smooth;
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
     }
 
-    header {
-      background: linear-gradient(135deg, #3498db, #2ecc71);
-      color: #fff;
-      padding: 40px 20px;
-      text-align: center;
+    /* ── BACKGROUND GRID ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 0;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 2.8em;
-    }
-
-    header p {
-      margin: 10px 0 0;
-      font-size: 1.2em;
-      font-weight: 500;
-    }
-
+    /* ── NAV ── */
     nav {
-      background: #2c3e50;
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
       display: flex;
-      justify-content: center;
-      padding: 12px 0;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 6%;
+      background: rgba(10,14,26,0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
     }
 
-    nav a {
-      color: #fff;
+    .nav-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 1.3rem;
+      color: var(--accent);
+      letter-spacing: -0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--muted);
       text-decoration: none;
-      margin: 0 18px;
-      font-weight: bold;
-      font-size: 1.05em;
-      transition: color 0.3s, transform 0.3s;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      transition: color 0.3s;
     }
 
-    nav a:hover {
-      color: #f1c40f;
-      transform: scale(1.1);
+    .nav-links a:hover { color: var(--accent); }
+
+    .nav-cta {
+      background: var(--accent);
+      color: var(--bg) !important;
+      padding: 9px 22px;
+      border-radius: 6px;
+      font-weight: 600 !important;
+      transition: all 0.3s !important;
     }
 
+    .nav-cta:hover {
+      background: var(--accent2) !important;
+      color: var(--bg) !important;
+      transform: translateY(-1px);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 6% 80px;
+      z-index: 1;
+    }
+
+    .hero-blob {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,212,255,0.12) 0%, transparent 70%);
+      top: 10%;
+      right: -100px;
+      pointer-events: none;
+      animation: pulse 6s ease-in-out infinite;
+    }
+
+    .hero-blob2 {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(123,97,255,0.1) 0%, transparent 70%);
+      bottom: 10%;
+      left: -80px;
+      pointer-events: none;
+      animation: pulse 8s ease-in-out infinite reverse;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.7; }
+      50% { transform: scale(1.1); opacity: 1; }
+    }
+
+    .hero-content {
+      display: flex;
+      align-items: center;
+      gap: 80px;
+      max-width: 1200px;
+      width: 100%;
+    }
+
+    .hero-text { flex: 1; }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0,212,255,0.1);
+      border: 1px solid rgba(0,212,255,0.25);
+      color: var(--accent);
+      padding: 6px 16px;
+      border-radius: 100px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      margin-bottom: 24px;
+      animation: fadeUp 0.6s ease both;
+    }
+
+Julex mama 🐾, [2/24/2026 3:54 PM]
+.hero-badge::before {
+      content: '';
+      width: 7px; height: 7px;
+      background: var(--accent2);
+      border-radius: 50%;
+      animation: blink 1.5s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    .hero h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2.8rem, 5vw, 4.2rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      margin-bottom: 20px;
+      animation: fadeUp 0.6s 0.1s ease both;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 520px;
+      margin-bottom: 36px;
+      font-weight: 300;
+      line-height: 1.8;
+      animation: fadeUp 0.6s 0.2s ease both;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      animation: fadeUp 0.6s 0.3s ease both;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: var(--bg);
+      padding: 14px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.3px;
+      transition: all 0.3s;
+      box-shadow: 0 0 30px rgba(0,212,255,0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 50px rgba(0,212,255,0.5);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+      padding: 14px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: 1px solid var(--border);
+      transition: all 0.3s;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 40px;
+      margin-top: 52px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
+      animation: fadeUp 0.6s 0.4s ease both;
+    }
+
+    .stat-item { text-align: left; }
+
+    .stat-number {
+      font-family: 'Syne', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Profile photo */
+    .hero-photo {
+      flex-shrink: 0;
+      position: relative;
+      animation: fadeUp 0.6s 0.2s ease both;
+    }
+
+    .hero-photo::before {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent2), var(--accent3));
+      z-index: -1;
+      animation: rotate 4s linear infinite;
+    }
+
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .hero-photo img {
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      border: 4px solid var(--bg);
+    }
+
+    .availability-badge {
+      position: absolute;
+      bottom: 10px;
+      right: -10px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 8px 16px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--accent2);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+
+    .availability-badge::before {
+      content: '';
+      width: 7px; height: 7px;
+      background: var(--accent2);
+      border-radius: 50%;
+      animation: blink 1.5s infinite;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+Julex mama 🐾, [2/24/2026 3:54 PM]
+/* ── SECTIONS ── */
     section {
-      padding: 60px 20px;
-      max-width: 1100px;
+      position: relative;
+      z-index: 1;
+      padding: 100px 6%;
+    }
+
+    .section-inner {
+      max-width: 1200px;
       margin: auto;
     }
 
-    h2 {
-      text-align: center;
-      margin-bottom: 25px;
-      color: #2c3e50;
-      font-size: 2em;
+    .section-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
     }
 
-    #about p {
-      font-size: 1.1em;
-      text-align: center;
+    .section-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 16px;
+      line-height: 1.15;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      max-width: 560px;
+      font-size: 1.05rem;
+      margin-bottom: 60px;
+      font-weight: 300;
+    }
+
+    /* ── VALUE PROPOSITION ── */
+    .value-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .value-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      transition: all 0.4s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .value-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      transform: scaleX(0);
+      transition: transform 0.4s;
+      transform-origin: left;
+    }
+
+    .value-card:hover::before { transform: scaleX(1); }
+
+    .value-card:hover {
+      border-color: rgba(0,212,255,0.2);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+
+    .value-icon {
+      font-size: 2.2rem;
+      margin-bottom: 16px;
+    }
+
+    .value-card h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .value-card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    /* ── SKILLS ── */
+    #skills { background: var(--surface); }
+
+    .skills-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .skill-group { margin-bottom: 32px; }
+
+    .skill-group-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill-tag {
+      background: rgba(0,212,255,0.07);
+      border: 1px solid rgba(0,212,255,0.15);
+      color: var(--text);
+      padding: 7px 16px;
+      border-radius: 6px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: all 0.3s;
+    }
+
+    .skill-tag:hover {
+      background: rgba(0,212,255,0.15);
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .skill-tag.green {
+      background: rgba(0,255,157,0.07);
+      border-color: rgba(0,255,157,0.15);
+    }
+
+    .skill-tag.green:hover {
+      background: rgba(0,255,157,0.15);
+      border-color: var(--accent2);
+      color: var(--accent2);
+    }
+
+    .skill-tag.purple {
+      background: rgba(123,97,255,0.07);
+      border-color: rgba(123,97,255,0.15);
+    }
+
+    .skill-tag.purple:hover {
+      background: rgba(123,97,255,0.15);
+      border-color: var(--accent3);
+      color: var(--accent3);
+    }
+
+    /* Cert badges */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 8px;
+    }
+
+    .cert-badge {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      transition: all 0.3s;
+    }
+
+    .cert-badge:hover {
+      border-color: rgba(0,212,255,0.3);
+      transform: translateY(-3px);
+    }
+
+    .cert-icon {
+      font-size: 1.8rem;
+      flex-shrink: 0;
+    }
+
+Julex mama 🐾, [2/24/2026 3:54 PM]
+.cert-name {
+      font-size: 0.85rem;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    .cert-issuer {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    /* ── PROJECTS ── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 24px;
+    }
+
+    .project-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      text-decoration: none;
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      transition: all 0.4s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card::after {
+      content: '→';
+      position: absolute;
+      top: 28px;
+      right: 28px;
+      font-size: 1.2rem;
+      color: var(--muted);
+      transition: all 0.3s;
+    }
+
+    .project-card:hover {
+      border-color: rgba(0,212,255,0.25);
+      transform: translateY(-6px);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.4);
+    }
+
+    .project-card:hover::after {
+      color: var(--accent);
+      transform: translate(4px, -4px);
+    }
+
+    .project-tag {
+      display: inline-block;
+      background: rgba(0,212,255,0.1);
+      color: var(--accent);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      padding: 4px 12px;
+      border-radius: 100px;
+      text-transform: uppercase;
+    }
+
+    .project-tag.devops { background: rgba(0,255,157,0.1); color: var(--accent2); }
+    .project-tag.infra { background: rgba(123,97,255,0.1); color: var(--accent3); }
+
+    .project-card h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      padding-right: 32px;
+      line-height: 1.3;
+    }
+
+    .project-card p {
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.7;
+      flex: 1;
+    }
+
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tech-pill {
+      background: var(--surface2);
+      color: var(--muted);
+      font-size: 0.78rem;
+      padding: 4px 12px;
+      border-radius: 100px;
+      border: 1px solid var(--border);
+    }
+
+    /* ── EXPERIENCE ── */
+    .timeline {
+      position: relative;
+      padding-left: 32px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 8px; bottom: 8px;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--accent), transparent);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 52px;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -36px;
+      top: 6px;
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 12px var(--accent);
+    }
+
+    .timeline-period {
+      font-size: 0.78rem;
+      color: var(--accent);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .timeline-role {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .timeline-company {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-bottom: 14px;
+    }
+
+    .timeline-desc {
+      color: var(--muted);
+      font-size: 0.95rem;
       line-height: 1.8;
     }
 
-    #about strong {
-      color: #3498db;
+    .timeline-desc li {
+      margin-bottom: 6px;
+      padding-left: 4px;
     }
 
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      justify-content: center;
-    }
+    .timeline-desc li::marker { color: var(--accent2); }
 
-    .skill {
-      background: #3498db;
-      color: #fff;
-      padding: 10px 18px;
-      border-radius: 25px;
-      font-size: 0.95em;
-      font-weight: bold;
-      transition: background 0.3s, transform 0.3s;
-    }
+    /* ── CONTACT ── */
+    #contact { background: var(--surface); }
 
-    .skill:nth-child(odd) {
-      background: #2ecc71;
-    }
-
-    .skill:hover {
-      transform: translateY(-5px);
-      background: #34495e;
-    }
-
-    .projects {
+    .contact-wrapper {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
     }
 
-    .projects a {
-      display: block;
-      background: #ecf0f1;
-      padding: 20px;
-      border-radius: 12px;
+    .contact-info p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 36px;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+Julex mama 🐾, [2/24/2026 3:54 PM]
+.contact-link {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: var(--text);
       text-decoration: none;
-      color: #2c3e50;
-      font-weight: bold;
-      text-align: center;
-      transition: transform 0.3s, background 0.3s;
-    }
-
-    .projects a:hover {
-      background: #dfe6e9;
-      transform: translateY(-8px);
-    }
-
-    .contact {
-      text-align: center;
-    }
-
-    .contact a {
-      display: inline-block;
-      margin: 12px;
-      padding: 14px 28px;
-      background: #3498db;
-      color: #fff;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s, transform 0.3s;
-    }
-
-    .contact a:hover {
-      background: #2ecc71;
-      transform: scale(1.05);
-    }
-
-    #backToTop {
-      display: none;
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
-      background: #e74c3c;
-      color: white;
-      border: none;
+      font-size: 0.95rem;
+      font-weight: 500;
       padding: 14px 20px;
-      border-radius: 50%;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      transition: all 0.3s;
+    }
+
+    .contact-link:hover {
+      border-color: rgba(0,212,255,0.3);
+      color: var(--accent);
+      transform: translateX(6px);
+    }
+
+    .contact-link-icon {
+      font-size: 1.2rem;
+      width: 36px;
+      text-align: center;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-group label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--muted);
+      letter-spacing: 0.3px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 13px 16px;
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      transition: border-color 0.3s;
+      outline: none;
+      resize: none;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(0,212,255,0.08);
+    }
+
+    .form-group textarea { min-height: 130px; }
+
+    .form-submit {
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: var(--bg);
+      border: none;
+      padding: 15px 32px;
+      border-radius: 8px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
       cursor: pointer;
-      font-size: 18px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      transition: background 0.3s, transform 0.3s;
+      transition: all 0.3s;
+      letter-spacing: 0.3px;
+    }
+
+    .form-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(0,212,255,0.3);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 32px 6%;
+      color: var(--muted);
+      font-size: 0.88rem;
+      z-index: 1;
+      position: relative;
+    }
+
+    footer span { color: var(--accent); }
+
+    /* ── BACK TO TOP ── */
+    #backToTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 46px; height: 46px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--accent);
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 99;
+      transition: all 0.3s;
     }
 
     #backToTop:hover {
-      background: #c0392b;
-      transform: rotate(360deg);
+      background: var(--accent);
+      color: var(--bg);
+      transform: translateY(-3px);
     }
 
-    footer {
-      background: #2c3e50;
-      color: white;
-      text-align: center;
-      padding: 18px 0;
-      margin-top: 40px;
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero-content { flex-direction: column-reverse; gap: 40px; text-align: center; }
+      .hero-actions { justify-content: center; }
+      .hero-stats { justify-content: center; }
+      .skills-layout { grid-template-columns: 1fr; gap: 32px; }
+      .contact-wrapper { grid-template-columns: 1fr; gap: 40px; }
+      .form-row { grid-template-columns: 1fr; }
+      .cert-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+
+    @media (max-width: 600px) {
+      nav { padding: 16px 5%; }
+      section { padding: 70px 5%; }
+      .hero { padding: 100px 5% 60px; }
+      .hero-photo img { width: 200px; height: 200px; }
     }
   </style>
 </head>
 <body>
-  <header>
-    <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 20px; text-align: left;">
-      <!-- Profile Photo -->
-      <img src="profile.jpg" alt="Julian Okoro" style="width: 160px; height: 160px; border-radius: 50%; border: 4px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
-      <!-- Intro Text -->
-      <div>
-        <h1>Julian Okoro</h1>
-        <p>🧑‍💻 DevOps & Cloud Security Engineer | IAM Specialist | Linux SysAdmin | Python Enthusiast</p>
-        <p style="max-width: 800px; font-size: 1.1rem; margin-top: 10px;">
-          I’m a <strong>DevOps & Cloud Engineer</strong> with hands-on experience designing, securing, and automating cloud infrastructure.  
-          Skilled in <strong>AWS, Azure, Docker, Kubernetes, Terraform, and CI/CD pipelines</strong>, I help organizations build scalable and secure systems.  
-        </p>
-      </div>
-    </div>
-  </header>
 
+  <!-- NAV -->
   <nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      Hi, I'm <strong>Julian Okoro</strong>, a results-driven <strong>DevOps & Cloud Security Engineer</strong> 
-      with expertise in <strong>AWS and Azure</strong>. I specialize in designing secure cloud systems, 
-      automating workflows with <strong>CI/CD pipelines</strong>, and deploying resilient apps using 
-      <strong>Docker & Kubernetes</strong>.  
-      <br><br>
-      I'm also an <strong>IAM Specialist</strong>, <strong>Linux SysAdmin</strong>, and an enthusiastic learner 
-      exploring <strong>Python</strong> for automation and product testing. Beyond tech, I have strong experience 
-      in <strong>Customer Support</strong> (Nigeria & UK e-commerce) and as a <strong>Hospital Admin Assistant</strong>.
-    </p>
-  </section>
-
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="skills">
-      <div class="skill">AWS & Azure</div>
-      <div class="skill">IAM & Security</div>
-      <div class="skill">Linux System Administration</div>
-      <div class="skill">Docker & Containerization</div>
-      <div class="skill">CI/CD Pipeline Development</div>
-      <div class="skill">Terraform (IaC)</div>
-      <div class="skill">Monitoring & Incident Management</div>
-      <div class="skill">Customer Support & Communication</div>
-      <div class="skill">Python (Beginner)</div>
-      <div class="skill">Product Testing</div>
-    </div>
-  </section>
-
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="projects">
-      <a href="https://damilola-davids.notion.site/Capstone-Project-Documentation-Deploying-a-Bank-Application-223f8d103fbc8078be5ac64eedd1954a?pvs=74" target="_blank">Capstone Project: Bank Application Deployment</a>
-      <a href="https://github.com/OkoroJulian/localstack-ci-cd-project" target="_blank">CI/CD Pipeline with LocalStack</a>
-      <a href="https://github.com/The-Cloud-Squad/main_bank_app_backend" target="_blank">Bank App Backend</a>
-      <a href="https://github.com/The-Cloud-Squad/main_bank_app_frontend" target="_blank">Bank App Frontend</a>
-      <a href="https://github.com/The-Cloud-Squad/kubernetes-manifest" target="_blank">Kubernetes Manifests</a>
-      <a href="https://github.com/The-Cloud-Squad/tcs_infra" target="_blank">Infrastructure as Code (Terraform)</a>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <div class="contact">
-      <a href="mailto:julianonyinye2025@gmail.com">📧 Email Me</a>
-      <a href="https://github.com/OkoroJulian" target="_blank">💻 GitHub</a>
-      <a href="https://www.linkedin.com/in/julianokoro-itcloudengineer" target="_blank">🔗 LinkedIn</a>
-      <a href="https://x.com/TechieJulian?t=DWTYupb32nBY9vXiN-EWBA&s=09" target="_blank">🐦 X (Twitter)</a>
-      <a href="https://www.instagram.com/onyinye_j_?igsh=MXRzZXVrZGE5aTUxMQ==" target="_blank">📸 Instagram</a>
-    </div>
-  </section>
-
-  <button onclick="topFunction()" id="backToTop" title="Go to top">↑</button>
-
-  <footer>
-    <p>© 2025 Julian Okoro | Built with ❤️ and Cloud</p>
-  </footer>
-
-  <script>
-    let backToTop = document.getElementById("backToTop");
-    window.onscroll = function() {
-      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-        backToTop.style.display = "block";
-      } else {
-        backToTop.style.display = "none";
-      }
-    };
-    function topFunction() {
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
-    }
-  </script>
-</body>
-</html>
+    <div class="nav-logo">Julian.dev</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#techstack">Tech Stack</a></li>
+      <li><a href="#pr
